@@ -28,6 +28,9 @@ print (list(enumerate(l1)))
 print('------------------------2----------------------')
 
 # changing start index to 2 from 0
+print (list(enumerate(s1, start = 2)))
+
+#OR can write directly
 print (list(enumerate(s1, 2)))
 
 print('-------------------------3-----------------------')

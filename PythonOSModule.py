@@ -5,10 +5,28 @@ Python has a built-in os module with methods for interacting with the operating 
 like creating files and directories, management of files and directories, 
 input, output, environment variables, process management, etc.
 
+
+
 '''
 
 # importing os module 
 import os 
+      
+
+'''
+Reading and writing files The os module provides functions for opening, reading, and writing files. 
+For example, to open a file for reading, you can use the open function:
+
+'''
+# f = os.open("test.txt", os.O_RDONLY)
+# contents = os.read(f, 4)
+
+# To open a file for writing, you can use the os.O_WRONLY flag:
+# f = os.open("myfile.txt", os.O_WRONLY)
+# Write to the file
+# os.write(f, b"Hello, world!")
+
+
       
 # Get the current working 
 # directory (CWD) 
@@ -21,7 +39,7 @@ os.chdir('../')
 #os.makedirs()  -- os.makedirs() method in Python is used to create a directory recursively. That means while making leaf directory 
 #if any intermediate-level directory is missing, os.makedirs() method will create them all.
 
-os.makedirs('path')
+os.makedirs('path') 
 
 
 # Join Directory path
@@ -49,7 +67,23 @@ os.path.getsize("file_path")
 
 # get last string in the path or dir
 path1 = '/dir1/dir2/dir3/file.txt'
-print(os.path.basename(path1))
+path2 = '/dir1/dir2/dir3'
+print(os.path.basename(path1))  # this will return file.txt
+print(os.path.basename(path2))   # this will return dir3
+
+
+# Running system commands
+# Run the "ls" command and print the output
+output = os.system("ls")
+print(output)
+
+# You can also use the os.popen function to run a command and get the output as a file-like object:
+## Run the "ls" command and get the output as a file-like object
+f = os.popen("ls")
+output = f.read()
+print(output)
+# Close the file-like object
+f.close()
 
 
 

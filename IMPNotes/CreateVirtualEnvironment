@@ -1,0 +1,13 @@
+A virtual environment is a tool that helps to keep dependencies required by different projects separate by creating isolated python virtual environments for them. This is one of the most important tools that 
+most Python developers use.
+
+                           Why do we need a virtual environment?
+
+Imagine a scenario where you are working on two web-based python projects one of them uses Django 4.0 and the other uses Django 4.1 (check for the latest Django versions and so on). In such situations virtual environment can be really useful to maintain the dependencies of both projects.
+
+To create a virtual environment in Python, you can use the venv module that comes with Python. Here's an example of how to create a virtual environment and activate it:
+
+# Create a virtual environment
+python -m venv myenv
+
+This allows you to have a separate set of packages for each project, without affecting the packages installed in the global environment.    
