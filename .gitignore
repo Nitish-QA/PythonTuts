@@ -1,4 +1,4 @@
-/Lib
-/Scripts
-/Include
+myenv/lib/
+myenv/Scripts/
+myenv/Include/
 
