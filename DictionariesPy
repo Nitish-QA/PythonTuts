@@ -1,0 +1,218 @@
+'''
+**Exercise 1: Convert two lists into a dictionary and vice versa
+Exercise 2: Merge two Python dictionaries into one
+Exercise 3: Print the value of a key from the below dict
+**Exercise 4: Initialize dictionary with default values
+employees = ['Kelly', 'Emma']
+defaults = {"designation": 'Developer', "salary": 8000}
+
+Exercise 5: Create a dictionary by extracting the keys from a given dictionary
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"}
+
+# Keys to extract
+keys = ["name", "salary"]
+
+Exercise 6: Delete a list of keys from a dictionary
+sample_dict = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"
+}
+
+# Keys to remove
+keys = ["name", "salary"]
+
+Exercise 7: Check if a value exists in a dictionary
+sample_dict = {'a': 100, 'b': 200, 'c': 300}
+Expected output:
+200 present in a dict
+
+Exercise 8: Write a program to rename a key city to a location in the following dictionary.
+sample_dict = {
+  "name": "Kelly",
+  "age":25,
+  "salary": 8000,
+  "city": "New york"
+}
+
+Exercise 9: Get the key of a minimum value from the following dictionary
+sample_dict = {
+  'Physics': 82,
+  'Math': 65,
+  'history': 75
+}
+
+Exercise 10: Change value of a key in a nested dictionary
+sample_dict = {
+    'emp1': {'name': 'Jhon', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 500}
+}
+
+Excercise 11: Print the value of key ‘history’ from the below dict
+sampleDict = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
+}
+
+
+'''
+print('---------------------------------1------------------')
+l1 = ['a', 'b', 'c', 'd', 'e']
+l2 = [22, 34, 45, 56, 67]
+
+dict1 = dict(zip(l1, l2))  # zip(keys,values) used here to convert list into dictionary
+print(dict1)
+
+#OR
+dict_res = {}
+for i in range(len(l1)):
+    dict_res.update({l1[i]: l2[i]})
+print(dict_res)
+
+# Now coverting dictionaries into lists
+mdict = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+print()
+
+l1 = [x for x in mdict.keys()]
+l2 = [x for x in mdict.values()]
+print(l1, '\n', l2)
+
+
+print('---------------------------------2------------------')
+dict2 = {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+dict3 = {'Forty': 40, 'Fifty': 50}
+
+dict_merge = {**dict2, **dict3}  # Here ** syntax is used to unpack the dictionary and {} used to create new dictionary
+print(dict_merge)
+
+print('---------------------------------3------------------')
+
+print(dict_merge['Twenty'])  # Remember here to print value of a key '[]' is used
+
+
+print('----------------------------------4------------------')
+employees = ['Kelly', 'Emma']
+defaults = {"designation": 'Developer', "salary": 8000}
+
+res_dict1 = dict.fromkeys(employees, defaults)
+# The fromkeys() method returns a dictionary with the specified keys and the specified value.
+
+print(res_dict1)
+
+
+print('---------------------------5-------------------------')
+
+sample_dict1 = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"}
+
+keys1 = ['name', 'salary']
+# Here we can use dictionary comprehension
+
+res_dict2 = {k: sample_dict1[k] for k in keys1}
+# To understand : newdict = {key: value for item in iterable}
+print(res_dict2)
+
+print('------------------------------6--------------------------')
+
+sample_dict2 = {
+    "name": "Kelly",
+    "age": 25,
+    "salary": 8000,
+    "city": "New york"
+}
+
+keys_to_remove = ['city', 'age']
+
+{sample_dict2.pop(x) for x in keys_to_remove } # it returns a set of values of deleted keys
+
+print(sample_dict2)
+
+
+
+print('----------------------------------7--------------------------')
+
+sample_dict3 = {'a': 100, 'b': 200, 'c': 300}
+
+if 200 in sample_dict3.values():
+    print('True, Value is present')
+
+
+print('----------------------------8------------------------')
+
+sample_dict4 = {
+  "name": "Kelly",
+  "age":25,
+  "salary": 8000,
+  "city": "New york"
+}
+
+old_key = 'city'
+new_key = 'location'
+sample_dict4[new_key] = sample_dict4[old_key]
+sample_dict4.pop('city')
+print(sample_dict4)
+
+
+print('--------------------------9---------------------')
+
+sample_dict5 = {
+  'Physics': 82,
+  'Math': 65,
+  'history': 75
+}
+
+l3 = sample_dict5.values()
+min_value = min(l3)
+
+print({x: sample_dict5[x] for x in sample_dict5 if sample_dict5[x] == min_value})
+
+
+print('----------------------------10---------------------')
+
+sample_dict6= {
+    'emp1': {'name': 'Jhon', 'salary': 7500},
+    'emp2': {'name': 'Emma', 'salary': 8000},
+    'emp3': {'name': 'Brad', 'salary': 500}
+}
+
+sample_dict6['emp3']['salary'] = 5000
+print(sample_dict6)
+
+print('------------------------11------------------------')
+
+sample_dict7 = {
+    "class": {
+        "student": {
+            "name": "Mike",
+            "marks": {
+                "physics": 70,
+                "history": 80
+            }
+        }
+    }
+}
+
+print(sample_dict7['class']['student']['marks']['history'])
+
+
+
+
+
+#dict1 = {i:f"item{i}" for i in range(100)}
+#print(dict1)
