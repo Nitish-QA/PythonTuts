@@ -1,0 +1,47 @@
+Set:
+Sets are written with curly brackets.
+Set items are unchangeable, but you can remove items and add new items. 	
+Set items are unordered and unindexed, meaning you cannot refer to items by index like you can in lists and tuples.
+Sets do not allow duplicate items. If you try to add a duplicate item, it will be ignored.
+The values True and 1 are considered the same value in sets, and are treated as duplicates:
+Sets can contain elements of multiple data types, including numbers, strings, and other objects
+
+
+List:
+Lists are created using square brackets
+List items are ordered, changeable, and allow duplicate values.
+list is changeable, meaning that we can change, add, and remove items in a list after it has been created.
+ allows duplicates: Since lists are indexed, lists can have items with the same value
+ A list can contain different data types:
+ 
+ 
+Tuple:
+Tuples are created using round brackets.
+Tuple items are ordered and indexed, like lists.
+Tuples are immutable, meaning you cannot change, add, or remove items after the tuple has been created.
+Tuples can contain duplicate items, similar to lists.
+Tuples can contain elements of multiple data types, just like lists and sets.
+
+
+Dicstionary:
+Dictionaries are used to store data values in key:value pairs.
+Dictionaries are written with curly brackets, and have keys and values
+Dictionary items are ordered, changeable, and does not allow duplicates.
+As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
+Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.
+Dictionaries cannot have two items with the same key
+values in dictionaries can contain different data types
+
+String:
+Strings are sequences of characters and are written using either single quotes ('') or double quotes ("").
+String items are ordered and indexed, meaning you can access individual characters using their index.
+Strings are immutable, which means you cannot change their characters after they have been created.
+Strings can contain duplicate characters, just like any other sequence.
+Strings can contain any Unicode characters, making them versatile for representing text and data.
+
+One liner:
+Set: Unordered collection of unique elements.
+List: Ordered, mutable collection of elements that may contain duplicates.
+Tuple: Ordered, immutable collection of elements that may contain duplicates.
+Dictionary: Unordered collection of key-value pairs, where keys are unique and associated with their corresponding values.
+String: Immutable sequence of characters representing text or data.
