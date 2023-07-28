@@ -1,0 +1,34 @@
+Creating a Class:
+Let us now create a class using the class keyword.
+
+class Details:
+    name = "Rohan"
+    age = 20
+
+
+Classes are created by keyword class.
+Attributes are the variables that belong to a class.
+Attributes are always public and can be accessed using the dot (.) operator. 
+Eg.: Details.name
+
+
+Creating an Object:
+Object is the instance of the class used to access the properties of the class Now lets create an object of the class.
+
+Example:
+obj1 = Details()
+print(obj1.name)
+print(obj1.age)
+
+'self'  Parameter:
+self represents the instance of the class. 
+Self is always pointing to Current Object.
+By using the “self”  we can access the attributes and methods of the class in python
+1. Class methods must have an extra first parameter in the method definition. 
+We do not give a value for this parameter when we call the method, Python provides it
+2. If we have a method that takes no arguments, then we still have to have one argument.
+3. This is similar to this pointer in java
+
+
+
+

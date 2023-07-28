@@ -1,0 +1,68 @@
+'''
+The diamond problem is a common issue that can occur in programming languages that 
+support multiple inheritance. It arises when a class inherits from two or more classes 
+that have a common ancestor. 
+
+   A
+  / \
+ B   C
+  \ /
+   D
+In this example, class D inherits from both classes B and C, which in turn both inherit from class A. 
+This creates a diamond-shaped inheritance hierarchy. The problem arises when classes B and C have a 
+method with the same name, let's say foo(). Now, when we call foo() on an instance of class D, 
+it is ambiguous which version of foo() should be called: the one from class B or the one from class C.
+
+Python provides a mechanism called Method Resolution Order (MRO) to solve this issue. 
+The MRO determines the order in which Python searches for methods in a class hierarchy 
+during method calls.
+
+Python follows the C3 linearization algorithm to calculate the MRO
+The C3 linearization algorithm takes into account the order in which the base classes 
+are specified during class declaration
+
+So, Python looks for the method in the class hierarchy from left to right
+
+To access the MRO of a class, you can use the __mro__ attribute or the mro() method. 
+You generally don't need to use __mro__ directly in your code to handle method resolution in Python. 
+The Method Resolution Order (MRO) is automatically calculated and used by Python
+
+
+However, you might find the __mro__ attribute useful in certain situations for debugging 
+or introspection purposes. 
+
+
+Below is diamond problem code
+'''
+
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def show(self):
+        print("B")
+
+class C(A):
+    def show(self):
+        print("C")
+
+class D(B, C):
+    def show(self):
+        print("D")
+
+obj = D()
+obj.show()
+
+# Access the MRO of class D
+print(D.__mro__)
+
+######################################################################
+-- Output:
+D
+(<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
+
+-- It tells us that when calling methods on instances of class D, Python 
+will first search in class D, then in class B, followed by class C, class A, and 
+finally in the built-in object class.
+
