@@ -1,0 +1,64 @@
+5 Types of Arguments in Python Function Definition:
+default arguments
+keyword arguments
+positional arguments
+arbitrary positional arguments
+arbitrary keyword arguments
+
+
+The function definition starts with the keyword def. 
+It must be followed by the function name and the parenthesized list of formal parameters.
+
+1. DEFAULT ARGUMENT: In Python, we can provide default values to function arguments.
+
+We use the = operator to provide default values. For example,
+def add_numbers( a = 7,  b = 8, c):
+    sum = a + b
+    print('Sum:', sum)
+
+# we can call this function with any number of arguments
+# function call with two arguments
+add_numbers(2, 3)
+
+#  function call with one argument
+add_numbers(a = 2)
+-- Here we passed only one argument 'a', so it will use default value for 'b'
+
+# function call with no arguments
+add_numbers()
+-- Here it will use defualt values for both a and b
+
+***********************************************************************************************************
+
+2. ARBITRARY ARGUMENT: Python Function With Arbitrary Arguments
+
+Sometimes, we do not know in advance the number of arguments that will be passed into a function. To handle this kind of situation, we can use arbitrary arguments in Python.
+
+Arbitrary arguments allow us to pass a varying number of values during a function call.
+
+We use an asterisk (*) before the parameter name to denote this kind of argument. For example,
+
+# program to find sum of multiple numbers 
+
+def find_sum(*numbers):
+    result = 0
+    
+    for num in numbers:
+        result = result + num
+    
+    print("Sum = ", result)
+
+# function call with 3 arguments
+find_sum(1, 2, 3)
+
+# function call with 2 arguments
+find_sum(4, 9)
+
+Output:
+Sum =  6
+Sum =  13
+
+NOTE: After getting multiple values, numbers behave as an tuple so we are able to use the for loop to access each value.
+
+
+
